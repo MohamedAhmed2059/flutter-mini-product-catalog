@@ -13,11 +13,13 @@
 //
 // c) Which methods run when you leave a page and go back?
 //    - Products -> Details (push): Details runs initState ->
-//      didChangeDependencies -> build. Products is NOT disposed, it stays in
-//      the stack under Details.
-//    - Details -> back (pop): Details runs deactivate -> dispose, and Products
-//      runs build again because setState shows the "... added to cart" text.
-//      Products doesn't run initState again because it never left the stack.
+//      didChangeDependencies -> build. Products only runs build once (the
+//      router rebuilds its pages when the location changes), it is NOT
+//      deactivated or disposed because it stays in the stack under Details.
+//    - Details -> back (pop): Details runs deactivate, Products runs build
+//      (setState shows the "... added to cart" text), and then Details runs
+//      dispose after the back animation. Products doesn't run initState again
+//      because it never left the stack.
 //    - Login -> Products (go): Login runs deactivate -> dispose because go
 //      replaces the whole stack.
 //

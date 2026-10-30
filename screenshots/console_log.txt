@@ -1,0 +1,26 @@
+Injecting <script> tag. Using callback.
+LoginPage: initState
+LoginPage: didChangeDependencies
+LoginPage: build
+--- press Login (go) ---
+ProductsPage: initState
+ProductsPage: didChangeDependencies -> width: 420, height: 860
+ProductsPage: build
+LoginPage: deactivate
+LoginPage: dispose
+--- press heart ---
+ProductsPage: build
+--- press heart again ---
+ProductsPage: build
+--- tap Laptop (push) ---
+DetailsPage: initState
+DetailsPage: didChangeDependencies
+DetailsPage: build
+ProductsPage: build
+--- press Add to Cart (pop) ---
+DetailsPage: deactivate
+ProductsPage: build
+DetailsPage: dispose
+--- resize window to 900px ---
+ProductsPage: didChangeDependencies -> width: 900, height: 700
+ProductsPage: build
