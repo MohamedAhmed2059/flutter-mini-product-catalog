@@ -7,7 +7,7 @@ void main() {
   testWidgets('login, favorite, open details and add to cart', (tester) async {
     await tester.pumpWidget(const MyApp());
 
-    await tester.tap(find.text('Login'));
+    await tester.tap(find.widgetWithText(ElevatedButton, 'Login'));
     await tester.pumpAndSettle();
     expect(find.text('Welcome, Guest'), findsOneWidget);
 
